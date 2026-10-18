@@ -12,24 +12,21 @@ This project is built using a modern full-stack architecture to ensure real-time
 - **Frontend:** Vue 3 (Composition API) with TypeScript
 - **Backend:** Express (Node.js) with TypeScript
 - **Database:** MongoDB
-- **Communication:** WebSockets / REST API (for real-time metrics data syncing)
+- **Communication:** WebSockets / REST API
 
 ## 🗺️ Product Roadmap
 
-### 🏁 Phase 1: Core Foundation & Connection (In Progress)
-- [ ] Set up secure authentication between the mobile client and the desktop agent.
-- [ ] Establish a live database connection with MongoDB for user configurations.
-- [ ] Implement initial TypeScript boilerplate across the Vue 3 and Express apps.
+### 🏁 Phase 1: Core Architecture & Setup (Current)
+- [x] Establish Monorepo structure and configure shared TypeScript types between frontend and backend.
+- [ ] Build the base Express server with a functional health check endpoint.
+- [ ] Connect the Vue 3 mobile application to the backend API layer.
 
-### 📊 Phase 2: Real-Time Monitoring Dashboard
-- [ ] Build the desktop service agent to collect CPU, RAM, and GPU health metrics.
-- [ ] Stream hardware data to the Vue 3 mobile frontend using WebSockets.
-- [ ] Design interactive, responsive charts for effortless mobile viewing.
+### 📊 Phase 2: Real-Time Resource Monitoring
+- [ ] Implement system metrics collection (CPU and RAM utilization) on the desktop host.
+- [ ] Set up WebSocket communication to stream performance data in real time.
+- [ ] Create basic responsive charts in the Vue 3 dashboard for live viewing.
 
-### ⚡ Phase 3: Remote Action Controls
-- [ ] Implement quick-action buttons for remote system shutdown, sleep, and restart.
-- [ ] Integrate media control capabilities (play, pause, skip, and volume adjustment).
-- [ ] Add custom macro shortcuts triggering execution on the host machine.
-
----
-*Developed by a passionate Full-Stack Engineer. Feel free to explore the repository or reach out if you have any questions!*
+### 🔐 Phase 3: Authentication & Persistent Settings
+- [ ] Integrate MongoDB to store user configurations and persistent system logs.
+- [ ] Implement a secure authentication mechanism between the mobile client and the desktop agent.
+- [ ] Add basic remote power actions, including system shutdown and sleep controls.
