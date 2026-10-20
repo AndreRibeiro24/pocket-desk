@@ -47,7 +47,6 @@ onMounted(async () => {
       <p>Data Loading was not possible due to server error:</p>
       <small>{{ error }}</small>
     </div>
-    <div></div>
     <!--If System Status is Ok-->
     <div v-else-if="health" class="status-healthy">
       <p>
