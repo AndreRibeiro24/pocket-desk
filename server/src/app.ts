@@ -6,7 +6,7 @@ export const app = express();
 
 app.get("/api/health", (req:Request,res:Response<HealthResponse>):void =>{
   res.status(200).json({
-    status: "Ok",
+    status: "ok",
     uptime: process.uptime()
   });
 });
