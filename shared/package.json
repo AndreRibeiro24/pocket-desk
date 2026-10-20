@@ -6,8 +6,10 @@
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "scripts": {
-        "build":"tsc"
+        "build": "tsc"
     },
     "dependencies": {
-        "typescript": "^5.6.0"
-    }}
+        "typescript": "^5.6.0",
+        "zod": "^4.6.7"
+    }
+}
