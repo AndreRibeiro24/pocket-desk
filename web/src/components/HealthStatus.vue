@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import type { HealthResponse } from '@pocketdesk/shared'
+import { HealthResponseSchema } from '@pocketdesk/shared'
 
 const health = ref<HealthResponse | null>(null)
 const error = ref<string | null>(null)
@@ -14,7 +15,13 @@ onMounted(async () => {
       throw new Error(`Server error: ${response.status}`)
     }
 
-    health.value = (await response.json()) as HealthResponse
+    const result = HealthResponseSchema.safeParse(await response.json())
+
+    if (!result.success) {
+      console.error('Invalid health response:', result.error)
+      throw new Error('Invalid response from server')
+    }
+    health.value = result.data
   } catch (err) {
     if (err instanceof Error) {
       error.value = err.message
@@ -33,7 +40,6 @@ onMounted(async () => {
     <!--If System Status is Loading-->
     <div v-if="loading" class="status-loading">
       <p>Verifying API Status</p>
-      s
     </div>
 
     <!--If System Status is Error-->
@@ -41,10 +47,13 @@ onMounted(async () => {
       <p>Data Loading was not possible due to server error:</p>
       <small>{{ error }}</small>
     </div>
-
+    <div></div>
     <!--If System Status is Ok-->
     <div v-else-if="health" class="status-healthy">
-      <p>Connection Established! Status: {{ health.status }} - Uptime: {{ health.uptime }}</p>
+      <p>
+        Connection Established! Status: {{ health.status }} - Uptime:
+        {{ Math.round(health.uptime) }}s
+      </p>
     </div>
   </div>
 </template>
