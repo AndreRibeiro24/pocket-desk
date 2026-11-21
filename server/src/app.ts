@@ -1,4 +1,4 @@
-import express, { Application } from "express";
+import express from "express";
 import type { Request, Response } from "express";
 import type { HealthResponse } from "@pocketdesk/shared";
 import { authRouter } from "./auth.js";
