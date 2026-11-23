@@ -12,6 +12,7 @@
   "dependencies": {
     "@pocketdesk/shared": "*",
     "express": "^4.21.0",
+    "express-rate-limit": "^8.7.5",
     "jsonwebtoken": "^9.0.3",
     "zod": "^4.6.7"
   },
