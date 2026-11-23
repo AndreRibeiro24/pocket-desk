@@ -13,6 +13,12 @@ export const LoginResponseSchema = z.object({
 export const ErrorResponseSchema = z.object({
   error: z.string(),
 });
+export const SystemInfoSchema = z.object({
+  hostname: z.string(),
+  platform: z.string(),
+});
+
+export type SystemInfo = z.infer<typeof SystemInfoSchema>;
 export type HealthResponse = z.infer<typeof HealthResponseSchema>;
 export type LoginRequest = z.infer<typeof LoginRequestSchema>;
 export type LoginResponse = z.infer<typeof LoginResponseSchema>;
