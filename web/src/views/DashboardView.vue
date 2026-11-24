@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import HealthStatus from '@/components/HealthStatus.vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
+import HealthStatus from '@/components/HealthStatus.vue'
+import SystemInfo from '@/components/SystemInfo.vue'
 
 const auth = useAuthStore()
 const router = useRouter()
@@ -14,5 +15,6 @@ async function logout() {
 
 <template>
   <HealthStatus />
+  <SystemInfo />
   <button type="button" @click="logout">Log out</button>
 </template>
