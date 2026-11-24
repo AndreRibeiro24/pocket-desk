@@ -1,9 +1,7 @@
-<script setup lang="ts">
-import HealthStatus from './components/HealthStatus.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <HealthStatus />
+  <RouterView />
 </template>
 
 <style scoped></style>
